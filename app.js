@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const expressValidator = require('express-validator');
 
 require('dotenv').config();
 
@@ -15,11 +16,12 @@ const app = express();
 // db
 mongoose
 	.connect(process.env.MONGO_URI, {})
-	.then(() => console.log('DB Connected'));
+	.then(() => console.log('MONGO Cloud DB Connected'));
 
 // middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(expressValidator());
 app.use(cookieParser());
 
 // routes middleware
