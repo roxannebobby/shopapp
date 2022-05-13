@@ -6,7 +6,7 @@ const {
 	signin,
 	signout,
 	requireSignin,
-} = require('../controllers/user');
+} = require('../controllers/auth');
 const { userSignupValidator } = require('../validator');
 
 // routes using router file
